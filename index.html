@@ -19,5 +19,18 @@
     <canvas id="reloj" width="300" height="300"></canvas>
 
     <script src="script.js"></script>
+
+    <!-- Registro del Service Worker -->
+    <script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker
+                .register("service-worker.js")
+                .then(() => console.log("Service Worker registrado"))
+                .catch(err => console.log("Error SW:", err));
+        });
+    }
+    </script>
+
 </body>
 </html>
